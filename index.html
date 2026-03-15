@@ -1,0 +1,3894 @@
+<!DOCTYPE html>
+<html lang="uz">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LuxEstate — Toshkent Luxury Properties</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Itim&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,300&display=swap"
+        rel="stylesheet" />
+
+    <style>
+        /* ============================================
+   LUXESTATE — PREMIUM REAL ESTATE CSS
+   Apple + Tesla + Airbnb Design Quality
+   ============================================ */
+
+        @import url('https://fonts.googleapis.com/css2?family=Itim&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&display=swap');
+
+        /* ── CSS VARIABLES ── */
+        :root {
+            --blue: #2563EB;
+            --blue-light: #3B82F6;
+            --blue-dark: #1D4ED8;
+            --navy: #0F172A;
+            --navy-mid: #1E293B;
+            --gold: #F59E0B;
+            --gold-light: #FCD34D;
+            --bg: #F8FAFC;
+            --card: #FFFFFF;
+            --text: #0F172A;
+            --text-mid: #475569;
+            --text-light: #94A3B8;
+            --border: #E2E8F0;
+            --shadow-sm: 0 1px 3px rgba(0, 0, 0, .08), 0 1px 2px rgba(0, 0, 0, .06);
+            --shadow-md: 0 4px 20px rgba(0, 0, 0, .08);
+            --shadow-lg: 0 20px 60px rgba(0, 0, 0, .12);
+            --shadow-xl: 0 30px 80px rgba(0, 0, 0, .18);
+            --radius: 20px;
+            --radius-sm: 12px;
+            --font: 'DM Sans', sans-serif;
+            --font-display: 'Itim', cursive;
+            --nav-h: 80px;
+            --transition: all .3s cubic-bezier(.4, 0, .2, 1);
+            --bounce: cubic-bezier(.34, 1.56, .64, 1);
+        }
+
+        /* ── RESET & BASE ── */
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            overflow-x: hidden;
+        }
+
+        body {
+            font-family: var(--font);
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        img {
+            display: block;
+            max-width: 100%;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        button {
+            border: none;
+            cursor: pointer;
+            font-family: var(--font);
+        }
+
+        input,
+        select,
+        textarea {
+            font-family: var(--font);
+            outline: none;
+            border: none;
+        }
+
+        /* ── UTILS ── */
+        .gradient-text {
+            background: linear-gradient(135deg, var(--blue) 0%, var(--gold) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .section-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: linear-gradient(135deg, rgba(37, 99, 235, .1), rgba(245, 158, 11, .1));
+            border: 1px solid rgba(37, 99, 235, .2);
+            color: var(--blue);
+            font-size: 13px;
+            font-weight: 600;
+            padding: 6px 16px;
+            border-radius: 100px;
+            letter-spacing: .5px;
+            text-transform: uppercase;
+            margin-bottom: 16px;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-title {
+            font-family: var(--font-display);
+            font-size: clamp(28px, 4vw, 40px);
+            font-weight: 400;
+            line-height: 1.2;
+            color: var(--navy);
+            margin-bottom: 16px;
+        }
+
+        .section-sub {
+            font-size: 17px;
+            color: var(--text-mid);
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        /* ── NAVBAR ── */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            padding: 16px 24px;
+            transition: var(--transition);
+        }
+
+        .navbar.scrolled .nav-inner {
+            background: rgba(255, 255, 255, .92);
+            backdrop-filter: blur(20px) saturate(180%);
+            -webkit-backdrop-filter: blur(20px);
+            box-shadow: 0 8px 40px rgba(0, 0, 0, .12);
+        }
+
+        .nav-inner {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            gap: 24px;
+            background: rgba(255, 255, 255, .7);
+            backdrop-filter: blur(20px) saturate(180%);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, .6);
+            border-radius: 100px;
+            padding: 10px 20px 10px 24px;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, .08);
+            transition: var(--transition);
+        }
+
+        .nav-logo {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            flex-shrink: 0;
+        }
+
+        .logo-icon {
+            font-size: 22px;
+            background: linear-gradient(135deg, var(--blue), var(--gold));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .logo-text {
+            font-family: var(--font-display);
+            font-size: 20px;
+            font-weight: 400;
+            background: linear-gradient(135deg, var(--navy), var(--blue));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 2px;
+            flex: 1;
+            justify-content: center;
+        }
+
+        .nav-link {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            font-size: 13.5px;
+            font-weight: 500;
+            color: var(--text-mid);
+            padding: 7px 12px;
+            border-radius: 100px;
+            transition: var(--transition);
+            white-space: nowrap;
+        }
+
+        .nav-link:hover,
+        .nav-link.active {
+            color: var(--blue);
+            background: rgba(37, 99, 235, .08);
+        }
+
+        .nav-icon {
+            font-size: 14px;
+        }
+
+        .nav-actions {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            flex-shrink: 0;
+        }
+
+        .search-wrapper {
+            position: relative;
+        }
+
+        .nav-search {
+            width: 200px;
+            background: rgba(15, 23, 42, .06);
+            border-radius: 100px;
+            padding: 8px 36px 8px 16px;
+            font-size: 13px;
+            color: var(--text);
+            transition: var(--transition);
+        }
+
+        .nav-search:focus {
+            width: 260px;
+            background: rgba(37, 99, 235, .06);
+            box-shadow: 0 0 0 2px rgba(37, 99, 235, .2);
+        }
+
+        .nav-search::placeholder {
+            color: var(--text-light);
+        }
+
+        .search-icon {
+            position: absolute;
+            right: 12px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 13px;
+            pointer-events: none;
+        }
+
+        .search-dropdown {
+            position: absolute;
+            top: calc(100% + 8px);
+            left: 0;
+            right: 0;
+            background: white;
+            border-radius: var(--radius-sm);
+            box-shadow: var(--shadow-lg);
+            border: 1px solid var(--border);
+            overflow: hidden;
+            display: none;
+            z-index: 100;
+            max-height: 320px;
+            overflow-y: auto;
+        }
+
+        .search-dropdown.open {
+            display: block;
+            animation: dropDown .2s ease;
+        }
+
+        @keyframes dropDown {
+            from {
+                opacity: 0;
+                transform: translateY(-8px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .sd-item {
+            padding: 12px 16px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            cursor: pointer;
+            transition: background .15s;
+            font-size: 14px;
+        }
+
+        .sd-item:hover {
+            background: var(--bg);
+        }
+
+        .sd-img {
+            width: 44px;
+            height: 44px;
+            border-radius: 8px;
+            object-fit: cover;
+            flex-shrink: 0;
+        }
+
+        .sd-info {
+            flex: 1;
+            min-width: 0;
+        }
+
+        .sd-title {
+            font-weight: 600;
+            font-size: 13px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .sd-meta {
+            font-size: 12px;
+            color: var(--text-mid);
+        }
+
+        .sd-price {
+            font-weight: 700;
+            color: var(--blue);
+            font-size: 13px;
+            flex-shrink: 0;
+        }
+
+        .nav-btn {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            background: rgba(15, 23, 42, .06);
+            border-radius: 100px;
+            padding: 8px 14px;
+            font-size: 14px;
+            color: var(--text-mid);
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .nav-btn:hover {
+            background: rgba(37, 99, 235, .1);
+            color: var(--blue);
+        }
+
+        .fav-count,
+        .cart-count {
+            background: var(--gold);
+            color: white;
+            font-size: 11px;
+            font-weight: 700;
+            min-width: 18px;
+            height: 18px;
+            border-radius: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0 4px;
+        }
+
+        /* ── CART PANEL ── */
+        .cart-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, .4);
+            z-index: 1100;
+            backdrop-filter: blur(4px);
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity .3s;
+        }
+
+        .cart-overlay.open {
+            opacity: 1;
+            pointer-events: all;
+        }
+
+        .cart-panel {
+            position: fixed;
+            top: 0;
+            right: -480px;
+            width: 440px;
+            height: 100vh;
+            background: white;
+            z-index: 1200;
+            box-shadow: var(--shadow-xl);
+            display: flex;
+            flex-direction: column;
+            transition: right .4s cubic-bezier(.4, 0, .2, 1);
+        }
+
+        .cart-panel.open {
+            right: 0;
+        }
+
+        .cart-header {
+            padding: 28px 24px 20px;
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .cart-header h3 {
+            font-family: var(--font-display);
+            font-size: 22px;
+            font-weight: 400;
+        }
+
+        .cart-close {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background: var(--bg);
+            font-size: 16px;
+            color: var(--text-mid);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+        }
+
+        .cart-close:hover {
+            background: #fee2e2;
+            color: #ef4444;
+        }
+
+        .cart-items {
+            flex: 1;
+            overflow-y: auto;
+            padding: 16px 24px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .cart-item {
+            display: flex;
+            gap: 12px;
+            background: var(--bg);
+            border-radius: var(--radius-sm);
+            padding: 12px;
+            animation: slideIn .3s ease;
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateX(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .ci-img {
+            width: 72px;
+            height: 60px;
+            border-radius: 10px;
+            object-fit: cover;
+            flex-shrink: 0;
+        }
+
+        .ci-details {
+            flex: 1;
+            min-width: 0;
+        }
+
+        .ci-title {
+            font-size: 14px;
+            font-weight: 600;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            margin-bottom: 2px;
+        }
+
+        .ci-district {
+            font-size: 12px;
+            color: var(--text-mid);
+            margin-bottom: 6px;
+        }
+
+        .ci-price {
+            font-size: 15px;
+            font-weight: 700;
+            color: var(--blue);
+        }
+
+        .ci-controls {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            margin-top: 6px;
+        }
+
+        .ci-qty-btn {
+            width: 24px;
+            height: 24px;
+            background: white;
+            border-radius: 6px;
+            font-size: 14px;
+            color: var(--text-mid);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .ci-qty-btn:hover {
+            background: var(--blue);
+            color: white;
+        }
+
+        .ci-qty {
+            font-size: 13px;
+            font-weight: 600;
+            min-width: 20px;
+            text-align: center;
+        }
+
+        .ci-remove {
+            margin-left: auto;
+            width: 28px;
+            height: 28px;
+            background: transparent;
+            border-radius: 50%;
+            font-size: 14px;
+            color: var(--text-light);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+        }
+
+        .ci-remove:hover {
+            background: #fee2e2;
+            color: #ef4444;
+        }
+
+        .cart-empty {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            color: var(--text-light);
+            font-size: 15px;
+        }
+
+        .cart-empty-icon {
+            font-size: 48px;
+        }
+
+        .cart-footer {
+            padding: 20px 24px 28px;
+            border-top: 1px solid var(--border);
+        }
+
+        .cart-total {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 16px;
+            font-size: 16px;
+        }
+
+        .cart-total strong {
+            font-size: 22px;
+            color: var(--blue);
+        }
+
+        .btn-checkout {
+            width: 100%;
+            background: linear-gradient(135deg, var(--blue), var(--blue-dark));
+            color: white;
+            padding: 14px;
+            border-radius: var(--radius-sm);
+            font-size: 15px;
+            font-weight: 600;
+            transition: var(--transition);
+            box-shadow: 0 8px 24px rgba(37, 99, 235, .3);
+        }
+
+        .btn-checkout:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 32px rgba(37, 99, 235, .4);
+        }
+
+        /* ── HERO ── */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+            padding: calc(var(--nav-h) + 40px) 5% 60px;
+        }
+
+        .hero-bg {
+            position: absolute;
+            inset: 0;
+            z-index: 0;
+            background: linear-gradient(135deg, #EFF6FF 0%, #F8FAFC 50%, #FFF7ED 100%);
+        }
+
+        .hero-orb {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(80px);
+            opacity: .5;
+            animation: orbFloat 8s ease-in-out infinite;
+        }
+
+        .orb1 {
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(37, 99, 235, .15) 0%, transparent 70%);
+            top: -200px;
+            right: -100px;
+            animation-delay: 0s;
+        }
+
+        .orb2 {
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(245, 158, 11, .12) 0%, transparent 70%);
+            bottom: -100px;
+            left: -100px;
+            animation-delay: 3s;
+        }
+
+        .orb3 {
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, rgba(37, 99, 235, .08) 0%, transparent 70%);
+            top: 50%;
+            left: 40%;
+            animation-delay: 6s;
+        }
+
+        @keyframes orbFloat {
+
+            0%,
+            100% {
+                transform: translate(0, 0) scale(1);
+            }
+
+            33% {
+                transform: translate(20px, -30px) scale(1.05);
+            }
+
+            66% {
+                transform: translate(-15px, 20px) scale(.95);
+            }
+        }
+
+        .hero-grid {
+            position: absolute;
+            inset: 0;
+            background-image:
+                linear-gradient(rgba(37, 99, 235, .04) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(37, 99, 235, .04) 1px, transparent 1px);
+            background-size: 60px 60px;
+            opacity: .6;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 1400px;
+            margin: 0 auto;
+            width: 100%;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: linear-gradient(135deg, rgba(37, 99, 235, .08), rgba(245, 158, 11, .08));
+            border: 1px solid rgba(37, 99, 235, .15);
+            color: var(--blue);
+            font-size: 13px;
+            font-weight: 600;
+            padding: 8px 18px;
+            border-radius: 100px;
+            margin-bottom: 24px;
+            animation: fadeUp .8s ease both;
+        }
+
+        .hero-title {
+            font-family: var(--font-display);
+            font-size: clamp(38px, 5vw, 58px);
+            font-weight: 400;
+            line-height: 1.15;
+            color: var(--navy);
+            margin-bottom: 20px;
+            animation: fadeUp .8s .1s ease both;
+        }
+
+        .hero-sub {
+            font-size: 17px;
+            color: var(--text-mid);
+            max-width: 440px;
+            margin-bottom: 36px;
+            line-height: 1.7;
+            animation: fadeUp .8s .2s ease both;
+        }
+
+        /* Search form */
+        .hero-search {
+            background: white;
+            border-radius: var(--radius);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, .1);
+            overflow: hidden;
+            margin-bottom: 28px;
+            animation: fadeUp .8s .3s ease both;
+            border: 1px solid rgba(255, 255, 255, .8);
+        }
+
+        .search-tabs {
+            display: flex;
+            border-bottom: 1px solid var(--border);
+            padding: 4px;
+            gap: 4px;
+            background: var(--bg);
+        }
+
+        .stab {
+            flex: 1;
+            padding: 10px;
+            border-radius: 12px;
+            font-size: 14px;
+            font-weight: 500;
+            color: var(--text-mid);
+            background: transparent;
+            transition: var(--transition);
+        }
+
+        .stab.active,
+        .stab:hover {
+            background: white;
+            color: var(--blue);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .search-bar {
+            display: flex;
+            align-items: center;
+            padding: 12px 12px 12px 20px;
+            gap: 0;
+        }
+
+        .sb-field {
+            flex: 1;
+            min-width: 0;
+        }
+
+        .sb-field label {
+            display: block;
+            font-size: 11px;
+            font-weight: 600;
+            color: var(--text-light);
+            text-transform: uppercase;
+            letter-spacing: .5px;
+            margin-bottom: 4px;
+        }
+
+        .sb-field select {
+            width: 100%;
+            font-size: 14px;
+            font-weight: 500;
+            color: var(--text);
+            background: transparent;
+            cursor: pointer;
+            padding: 2px 0;
+        }
+
+        .sb-divider {
+            width: 1px;
+            height: 40px;
+            background: var(--border);
+            margin: 0 16px;
+            flex-shrink: 0;
+        }
+
+        .hero-search-btn {
+            background: linear-gradient(135deg, var(--blue), var(--blue-dark));
+            color: white;
+            padding: 14px 24px;
+            border-radius: var(--radius-sm);
+            font-size: 14px;
+            font-weight: 600;
+            white-space: nowrap;
+            transition: var(--transition);
+            box-shadow: 0 8px 24px rgba(37, 99, 235, .3);
+            flex-shrink: 0;
+        }
+
+        .hero-search-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 32px rgba(37, 99, 235, .4);
+        }
+
+        .hero-ctas {
+            display: flex;
+            gap: 16px;
+            animation: fadeUp .8s .4s ease both;
+        }
+
+        .btn-primary {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: linear-gradient(135deg, var(--blue), var(--blue-dark));
+            color: white;
+            padding: 14px 28px;
+            border-radius: var(--radius-sm);
+            font-size: 15px;
+            font-weight: 600;
+            transition: var(--transition);
+            box-shadow: 0 8px 24px rgba(37, 99, 235, .3);
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 16px 40px rgba(37, 99, 235, .4);
+        }
+
+        .btn-ghost {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: transparent;
+            color: var(--text-mid);
+            padding: 14px 24px;
+            border-radius: var(--radius-sm);
+            font-size: 15px;
+            font-weight: 500;
+            border: 1.5px solid var(--border);
+            transition: var(--transition);
+        }
+
+        .btn-ghost:hover {
+            border-color: var(--blue);
+            color: var(--blue);
+            background: rgba(37, 99, 235, .04);
+            transform: translateY(-2px);
+        }
+
+        /* Hero right */
+        .hero-right {
+            animation: fadeUp .8s .2s ease both;
+        }
+
+        .hero-img-wrap {
+            position: relative;
+            border-radius: 28px;
+            overflow: visible;
+        }
+
+        .hero-img-glow {
+            position: absolute;
+            inset: -20px;
+            background: radial-gradient(circle, rgba(37, 99, 235, .15) 0%, transparent 70%);
+            border-radius: 50%;
+            filter: blur(40px);
+            z-index: 0;
+        }
+
+        .hero-img {
+            width: 100%;
+            height: 460px;
+            object-fit: cover;
+            border-radius: 28px;
+            box-shadow: 0 40px 80px rgba(0, 0, 0, .2);
+            position: relative;
+            z-index: 1;
+            transition: transform .6s ease;
+        }
+
+        .hero-img:hover {
+            transform: scale(1.02);
+        }
+
+        .hero-float-card {
+            position: absolute;
+            z-index: 2;
+            background: rgba(255, 255, 255, .95);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, .8);
+            border-radius: 16px;
+            padding: 14px 18px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, .12);
+            animation: floatCard 4s ease-in-out infinite;
+        }
+
+        .card-top {
+            top: 40px;
+            left: -30px;
+            animation-delay: 0s;
+        }
+
+        .card-mid {
+            top: 50%;
+            left: -40px;
+            transform: translateY(-50%);
+            animation-delay: 1.3s;
+        }
+
+        .card-bot {
+            bottom: 50px;
+            right: -20px;
+            animation-delay: 2.6s;
+        }
+
+        @keyframes floatCard {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-8px);
+            }
+        }
+
+        .card-mid {
+            animation: floatCardMid 4s ease-in-out 1.3s infinite;
+        }
+
+        @keyframes floatCardMid {
+
+            0%,
+            100% {
+                transform: translateY(-50%);
+            }
+
+            50% {
+                transform: translateY(calc(-50% - 8px));
+            }
+        }
+
+        .hfc-icon {
+            font-size: 24px;
+        }
+
+        .hfc-num {
+            font-family: var(--font-display);
+            font-size: 22px;
+            color: var(--navy);
+            line-height: 1;
+        }
+
+        .hfc-label {
+            font-size: 12px;
+            color: var(--text-mid);
+            font-weight: 500;
+        }
+
+        .hero-scroll {
+            position: absolute;
+            bottom: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+            color: var(--text-light);
+            font-size: 12px;
+            animation: fadeUp 1s .8s ease both;
+        }
+
+        .scroll-line {
+            width: 1px;
+            height: 50px;
+            background: linear-gradient(to bottom, transparent, var(--blue));
+            animation: scrollPulse 2s ease-in-out infinite;
+        }
+
+        @keyframes scrollPulse {
+            0% {
+                opacity: 0;
+                transform: scaleY(0);
+                transform-origin: top;
+            }
+
+            50% {
+                opacity: 1;
+                transform: scaleY(1);
+            }
+
+            100% {
+                opacity: 0;
+                transform: scaleY(0);
+                transform-origin: bottom;
+            }
+        }
+
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* ── STATS STRIP ── */
+        .stats-strip {
+            background: linear-gradient(135deg, var(--navy) 0%, var(--navy-mid) 100%);
+            padding: 40px 5%;
+        }
+
+        .stats-inner {
+            max-width: 900px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 40px;
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-num {
+            font-family: var(--font-display);
+            font-size: 42px;
+            font-weight: 400;
+            color: white;
+            line-height: 1;
+            margin-bottom: 6px;
+        }
+
+        .stat-label {
+            font-size: 14px;
+            color: rgba(255, 255, 255, .6);
+            font-weight: 400;
+        }
+
+        .stat-sep {
+            color: rgba(255, 255, 255, .15);
+            font-size: 32px;
+        }
+
+        /* ── DISTRICTS ── */
+        .districts-section {
+            padding: 100px 5%;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .districts-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .district-card {
+            position: relative;
+            border-radius: 20px;
+            overflow: hidden;
+            cursor: pointer;
+            aspect-ratio: 3/4;
+            transition: transform .4s var(--bounce), box-shadow .4s ease;
+        }
+
+        .district-card:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 30px 60px rgba(0, 0, 0, .2);
+        }
+
+        .district-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform .6s ease;
+        }
+
+        .district-card:hover img {
+            transform: scale(1.1);
+        }
+
+        .district-card::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(0, 0, 0, .8) 0%, transparent 60%);
+        }
+
+        .dc-info {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 20px;
+            z-index: 1;
+        }
+
+        .dc-name {
+            color: white;
+            font-size: 16px;
+            font-weight: 700;
+            margin-bottom: 4px;
+        }
+
+        .dc-count {
+            color: rgba(255, 255, 255, .7);
+            font-size: 13px;
+        }
+
+        .dc-arrow {
+            position: absolute;
+            top: 16px;
+            right: 16px;
+            width: 36px;
+            height: 36px;
+            background: rgba(255, 255, 255, .15);
+            backdrop-filter: blur(10px);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            z-index: 1;
+            transition: var(--transition);
+        }
+
+        .district-card:hover .dc-arrow {
+            background: var(--gold);
+        }
+
+        /* ── FILTER SIDEBAR ── */
+        .properties-section {
+            padding: 0 5% 100px;
+        }
+
+        .properties-section .section-header {
+            padding-top: 100px;
+        }
+
+        .props-layout {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 300px 1fr;
+            gap: 32px;
+            align-items: start;
+        }
+
+        .filter-sidebar {
+            background: white;
+            border-radius: var(--radius);
+            padding: 28px;
+            box-shadow: var(--shadow-md);
+            border: 1px solid var(--border);
+            position: sticky;
+            top: 100px;
+        }
+
+        .filter-head {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 28px;
+        }
+
+        .filter-head h3 {
+            font-size: 18px;
+            font-weight: 700;
+        }
+
+        .filter-reset {
+            font-size: 13px;
+            color: var(--blue);
+            background: transparent;
+            font-weight: 500;
+            padding: 4px 8px;
+            border-radius: 8px;
+            transition: var(--transition);
+        }
+
+        .filter-reset:hover {
+            background: rgba(37, 99, 235, .08);
+        }
+
+        .filter-group {
+            margin-bottom: 24px;
+        }
+
+        .filter-label {
+            display: block;
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--text-mid);
+            text-transform: uppercase;
+            letter-spacing: .5px;
+            margin-bottom: 10px;
+        }
+
+        .filter-select {
+            width: 100%;
+            background: var(--bg);
+            border: 1.5px solid var(--border);
+            border-radius: var(--radius-sm);
+            padding: 10px 14px;
+            font-size: 14px;
+            color: var(--text);
+            transition: var(--transition);
+            cursor: pointer;
+            -webkit-appearance: none;
+            appearance: none;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%2394A3B8' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 12px center;
+            padding-right: 36px;
+        }
+
+        .filter-select:focus {
+            border-color: var(--blue);
+            box-shadow: 0 0 0 3px rgba(37, 99, 235, .1);
+        }
+
+        .price-range {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .price-vals {
+            display: flex;
+            justify-content: space-between;
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--blue);
+            margin-bottom: 4px;
+        }
+
+        .range-slider {
+            width: 100%;
+            -webkit-appearance: none;
+            appearance: none;
+            height: 4px;
+            border-radius: 100px;
+            background: linear-gradient(to right, var(--blue) var(--val, 50%), var(--border) var(--val, 50%));
+            outline: none;
+            cursor: pointer;
+        }
+
+        .range-slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            background: var(--blue);
+            border: 3px solid white;
+            box-shadow: 0 2px 8px rgba(37, 99, 235, .4);
+            transition: transform .2s;
+        }
+
+        .range-slider::-webkit-slider-thumb:hover {
+            transform: scale(1.2);
+        }
+
+        .room-btns {
+            display: flex;
+            gap: 6px;
+            flex-wrap: wrap;
+        }
+
+        .room-btn {
+            padding: 7px 14px;
+            border-radius: 100px;
+            font-size: 13px;
+            font-weight: 500;
+            background: var(--bg);
+            color: var(--text-mid);
+            border: 1.5px solid var(--border);
+            transition: var(--transition);
+        }
+
+        .room-btn.active,
+        .room-btn:hover {
+            background: var(--blue);
+            color: white;
+            border-color: var(--blue);
+        }
+
+        .btn-apply-filter {
+            width: 100%;
+            background: linear-gradient(135deg, var(--blue), var(--blue-dark));
+            color: white;
+            padding: 13px;
+            border-radius: var(--radius-sm);
+            font-size: 14px;
+            font-weight: 600;
+            transition: var(--transition);
+            box-shadow: 0 6px 20px rgba(37, 99, 235, .25);
+            margin-top: 8px;
+        }
+
+        .btn-apply-filter:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 28px rgba(37, 99, 235, .35);
+        }
+
+        /* ── PROPERTIES GRID ── */
+        .props-toolbar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 24px;
+        }
+
+        .props-count {
+            font-size: 15px;
+            color: var(--text-mid);
+            font-weight: 500;
+        }
+
+        .filter-toggle-btn {
+            display: none;
+            background: var(--bg);
+            border: 1.5px solid var(--border);
+            border-radius: var(--radius-sm);
+            padding: 8px 16px;
+            font-size: 14px;
+            font-weight: 500;
+            transition: var(--transition);
+        }
+
+        .properties-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 24px;
+        }
+
+        /* ── PROPERTY CARD ── */
+        .property-card {
+            background: white;
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+            border: 1px solid rgba(226, 232, 240, .6);
+            transition: transform .4s var(--bounce), box-shadow .4s ease;
+            cursor: pointer;
+            transform-style: preserve-3d;
+            will-change: transform;
+            animation: cardFadeIn .4s ease both;
+        }
+
+        @keyframes cardFadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .property-card:hover {
+            box-shadow: 0 30px 60px rgba(0, 0, 0, .15);
+        }
+
+        .card-img-wrap {
+            position: relative;
+            overflow: hidden;
+            height: 200px;
+        }
+
+        .card-img-wrap img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform .6s ease;
+        }
+
+        .property-card:hover .card-img-wrap img {
+            transform: scale(1.08);
+        }
+
+        .card-price-badge {
+            position: absolute;
+            top: 14px;
+            left: 14px;
+            background: linear-gradient(135deg, var(--blue), var(--blue-dark));
+            color: white;
+            font-size: 13px;
+            font-weight: 700;
+            padding: 5px 12px;
+            border-radius: 100px;
+            backdrop-filter: blur(10px);
+        }
+
+        .card-new-badge {
+            position: absolute;
+            top: 14px;
+            right: 14px;
+            background: linear-gradient(135deg, var(--gold), #D97706);
+            color: white;
+            font-size: 11px;
+            font-weight: 700;
+            padding: 4px 10px;
+            border-radius: 100px;
+            text-transform: uppercase;
+            letter-spacing: .5px;
+        }
+
+        .card-fav-btn {
+            position: absolute;
+            bottom: 12px;
+            right: 12px;
+            width: 36px;
+            height: 36px;
+            background: rgba(255, 255, 255, .9);
+            backdrop-filter: blur(10px);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+            transition: var(--transition);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, .15);
+        }
+
+        .card-fav-btn:hover,
+        .card-fav-btn.active {
+            transform: scale(1.2);
+        }
+
+        .card-fav-btn.active {
+            background: #fee2e2;
+        }
+
+        .card-body {
+            padding: 18px 18px 14px;
+        }
+
+        .card-district {
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--blue);
+            text-transform: uppercase;
+            letter-spacing: .5px;
+            margin-bottom: 6px;
+        }
+
+        .card-title {
+            font-size: 16px;
+            font-weight: 700;
+            color: var(--navy);
+            margin-bottom: 10px;
+            line-height: 1.3;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .card-meta {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 10px;
+        }
+
+        .cm-item {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            font-size: 13px;
+            color: var(--text-mid);
+        }
+
+        .card-rating {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            margin-bottom: 12px;
+        }
+
+        .stars {
+            color: var(--gold);
+            font-size: 13px;
+            letter-spacing: 1px;
+        }
+
+        .rating-num {
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--text-mid);
+        }
+
+        .card-desc {
+            font-size: 13px;
+            color: var(--text-mid);
+            line-height: 1.5;
+            margin-bottom: 14px;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .card-actions {
+            display: flex;
+            gap: 8px;
+            padding: 0 18px 18px;
+        }
+
+        .btn-detail {
+            flex: 1;
+            background: linear-gradient(135deg, var(--blue), var(--blue-dark));
+            color: white;
+            padding: 10px;
+            border-radius: var(--radius-sm);
+            font-size: 13px;
+            font-weight: 600;
+            transition: var(--transition);
+            box-shadow: 0 4px 12px rgba(37, 99, 235, .25);
+            text-align: center;
+        }
+
+        .btn-detail:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(37, 99, 235, .35);
+        }
+
+        .btn-cart {
+            width: 42px;
+            height: 42px;
+            background: var(--bg);
+            border-radius: var(--radius-sm);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+            transition: var(--transition);
+            border: 1.5px solid var(--border);
+        }
+
+        .btn-cart:hover,
+        .btn-cart.in-cart {
+            background: linear-gradient(135deg, var(--gold), #D97706);
+            border-color: var(--gold);
+            color: white;
+            transform: scale(1.05);
+        }
+
+        /* ── LOAD MORE ── */
+        .load-more-wrap {
+            text-align: center;
+            margin-top: 48px;
+        }
+
+        .btn-load-more {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: white;
+            border: 2px solid var(--blue);
+            color: var(--blue);
+            padding: 16px 36px;
+            border-radius: var(--radius-sm);
+            font-size: 15px;
+            font-weight: 600;
+            transition: var(--transition);
+            box-shadow: var(--shadow-md);
+        }
+
+        .btn-load-more:hover {
+            background: var(--blue);
+            color: white;
+            transform: translateY(-3px);
+            box-shadow: 0 12px 32px rgba(37, 99, 235, .3);
+        }
+
+        .lm-count {
+            font-size: 13px;
+            opacity: .7;
+        }
+
+        /* ── MAP ── */
+        .map-section {
+            padding: 100px 5%;
+            background: var(--navy);
+        }
+
+        .map-section .section-header {
+            color: white;
+        }
+
+        .map-section .section-title {
+            color: white;
+        }
+
+        .map-section .section-sub {
+            color: rgba(255, 255, 255, .6);
+        }
+
+        .map-section .section-tag {
+            background: rgba(255, 255, 255, .1);
+            border-color: rgba(255, 255, 255, .2);
+            color: white;
+        }
+
+        .map-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .map-legend {
+            display: flex;
+            gap: 24px;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .ml-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 14px;
+            color: rgba(255, 255, 255, .7);
+        }
+
+        .ml-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+        }
+
+        .ml-dot.blue {
+            background: var(--blue);
+        }
+
+        .ml-dot.gold {
+            background: var(--gold);
+        }
+
+        .ml-dot.red {
+            background: #ef4444;
+        }
+
+        /* ── FAVORITES PAGE ── */
+        .favorites-page {
+            padding: 120px 5% 100px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .empty-state {
+            text-align: center;
+            padding: 80px 24px;
+        }
+
+        .es-icon {
+            font-size: 64px;
+            margin-bottom: 20px;
+        }
+
+        .empty-state h3 {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .empty-state p {
+            color: var(--text-mid);
+            margin-bottom: 28px;
+        }
+
+        /* ── ABOUT ── */
+        .about-section {
+            padding: 100px 5%;
+            background: linear-gradient(135deg, #EFF6FF 0%, #F8FAFC 100%);
+        }
+
+        .about-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+        }
+
+        .about-text {
+            font-size: 16px;
+            color: var(--text-mid);
+            line-height: 1.8;
+            margin-bottom: 28px;
+        }
+
+        .about-features {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .af-item {
+            font-size: 15px;
+            color: var(--text-mid);
+            padding: 10px 16px;
+            background: white;
+            border-radius: var(--radius-sm);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .about-img-grid {
+            position: relative;
+            height: 420px;
+        }
+
+        .ag-img {
+            position: absolute;
+            object-fit: cover;
+            border-radius: 20px;
+            box-shadow: var(--shadow-lg);
+        }
+
+        .ag-main {
+            width: 68%;
+            height: 75%;
+            top: 0;
+            right: 0;
+        }
+
+        .ag-sm1 {
+            width: 44%;
+            height: 46%;
+            bottom: 0;
+            left: 0;
+            border: 4px solid white;
+        }
+
+        .ag-sm2 {
+            width: 40%;
+            height: 40%;
+            top: 30%;
+            left: 30%;
+            border: 4px solid white;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, .2);
+        }
+
+        /* ── CONTACT ── */
+        .contact-section {
+            padding: 100px 5%;
+        }
+
+        .contact-grid {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1.5fr;
+            gap: 60px;
+            align-items: start;
+        }
+
+        .ci-item {
+            display: flex;
+            gap: 16px;
+            padding: 20px;
+            background: white;
+            border-radius: var(--radius-sm);
+            box-shadow: var(--shadow-sm);
+            margin-bottom: 12px;
+            transition: var(--transition);
+        }
+
+        .ci-item:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .ci-icon {
+            font-size: 24px;
+            flex-shrink: 0;
+        }
+
+        .ci-title {
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--text-light);
+            text-transform: uppercase;
+            letter-spacing: .5px;
+            margin-bottom: 4px;
+        }
+
+        .ci-text {
+            font-size: 15px;
+            color: var(--text-mid);
+        }
+
+        .contact-form {
+            background: white;
+            border-radius: var(--radius);
+            padding: 36px;
+            box-shadow: var(--shadow-md);
+            border: 1px solid var(--border);
+        }
+
+        .cf-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+        }
+
+        .cf-group {
+            margin-bottom: 20px;
+        }
+
+        .cf-group label {
+            display: block;
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--text-mid);
+            margin-bottom: 8px;
+        }
+
+        .cf-group input,
+        .cf-group textarea {
+            width: 100%;
+            background: var(--bg);
+            border: 1.5px solid var(--border);
+            border-radius: var(--radius-sm);
+            padding: 12px 16px;
+            font-size: 14px;
+            color: var(--text);
+            transition: var(--transition);
+            resize: vertical;
+        }
+
+        .cf-group input:focus,
+        .cf-group textarea:focus {
+            border-color: var(--blue);
+            background: white;
+            box-shadow: 0 0 0 3px rgba(37, 99, 235, .1);
+        }
+
+        /* ── FOOTER ── */
+        .footer {
+            background: var(--navy);
+            padding: 80px 5% 0;
+        }
+
+        .footer-inner {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1.5fr 1fr 1fr 1.5fr;
+            gap: 60px;
+            padding-bottom: 60px;
+            border-bottom: 1px solid rgba(255, 255, 255, .08);
+        }
+
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 16px;
+        }
+
+        .footer-logo .logo-text {
+            color: white;
+            -webkit-text-fill-color: white;
+        }
+
+        .footer-tagline {
+            font-size: 14px;
+            color: rgba(255, 255, 255, .5);
+            line-height: 1.7;
+            margin-bottom: 24px;
+        }
+
+        .footer-socials {
+            display: flex;
+            gap: 8px;
+        }
+
+        .social-link {
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, .08);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+            transition: var(--transition);
+        }
+
+        .social-link:hover {
+            background: var(--blue);
+            transform: translateY(-2px);
+        }
+
+        .footer-links h4 {
+            color: white;
+            font-size: 15px;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        .footer-links ul {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .footer-links a {
+            font-size: 14px;
+            color: rgba(255, 255, 255, .5);
+            transition: var(--transition);
+        }
+
+        .footer-links a:hover {
+            color: white;
+            padding-left: 6px;
+        }
+
+        .footer-newsletter h4 {
+            color: white;
+            font-size: 15px;
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+
+        .footer-newsletter p {
+            font-size: 14px;
+            color: rgba(255, 255, 255, .5);
+            margin-bottom: 16px;
+        }
+
+        .nl-form {
+            display: flex;
+            border-radius: var(--radius-sm);
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, .1);
+            margin-bottom: 12px;
+        }
+
+        .nl-form input {
+            flex: 1;
+            background: rgba(255, 255, 255, .06);
+            padding: 12px 16px;
+            font-size: 14px;
+            color: white;
+        }
+
+        .nl-form input::placeholder {
+            color: rgba(255, 255, 255, .3);
+        }
+
+        .nl-form button {
+            background: var(--blue);
+            color: white;
+            padding: 12px 18px;
+            font-size: 18px;
+            transition: var(--transition);
+        }
+
+        .nl-form button:hover {
+            background: var(--blue-dark);
+        }
+
+        .footer-trust {
+            display: flex;
+            gap: 16px;
+            font-size: 12px;
+            color: rgba(255, 255, 255, .3);
+        }
+
+        .footer-bottom {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 24px 0;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            font-size: 13px;
+            color: rgba(255, 255, 255, .3);
+        }
+
+        .fb-links {
+            display: flex;
+            gap: 24px;
+        }
+
+        .fb-links a {
+            color: rgba(255, 255, 255, .3);
+            transition: var(--transition);
+        }
+
+        .fb-links a:hover {
+            color: rgba(255, 255, 255, .6);
+        }
+
+        /* ── PROPERTY MODAL ── */
+        .modal-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, .6);
+            z-index: 2000;
+            backdrop-filter: blur(6px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 24px;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity .3s;
+        }
+
+        .modal-overlay.open {
+            opacity: 1;
+            pointer-events: all;
+        }
+
+        .property-modal {
+            background: white;
+            border-radius: 28px;
+            width: 100%;
+            max-width: 960px;
+            max-height: 90vh;
+            overflow-y: auto;
+            position: relative;
+            transform: scale(.95) translateY(20px);
+            transition: transform .4s var(--bounce);
+            box-shadow: 0 50px 100px rgba(0, 0, 0, .3);
+        }
+
+        .modal-overlay.open .property-modal {
+            transform: scale(1) translateY(0);
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            width: 40px;
+            height: 40px;
+            background: rgba(0, 0, 0, .06);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+            color: var(--text-mid);
+            z-index: 1;
+            transition: var(--transition);
+        }
+
+        .modal-close:hover {
+            background: #fee2e2;
+            color: #ef4444;
+        }
+
+        .modal-gallery {
+            position: relative;
+            height: 360px;
+            overflow: hidden;
+            border-radius: 28px 28px 0 0;
+        }
+
+        .modal-gallery img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .modal-body {
+            padding: 36px;
+        }
+
+        .modal-header {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            margin-bottom: 24px;
+        }
+
+        .modal-title {
+            font-family: var(--font-display);
+            font-size: 28px;
+            color: var(--navy);
+            font-weight: 400;
+        }
+
+        .modal-price {
+            font-size: 28px;
+            font-weight: 800;
+            color: var(--blue);
+        }
+
+        .modal-district {
+            color: var(--blue);
+            font-size: 14px;
+            font-weight: 600;
+            margin-top: 4px;
+        }
+
+        .modal-meta-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 16px;
+            margin-bottom: 28px;
+        }
+
+        .mmg-item {
+            background: var(--bg);
+            border-radius: var(--radius-sm);
+            padding: 16px;
+            text-align: center;
+        }
+
+        .mmg-icon {
+            font-size: 22px;
+            margin-bottom: 6px;
+        }
+
+        .mmg-val {
+            font-size: 16px;
+            font-weight: 700;
+            color: var(--navy);
+        }
+
+        .mmg-label {
+            font-size: 12px;
+            color: var(--text-mid);
+        }
+
+        .modal-desc {
+            font-size: 15px;
+            color: var(--text-mid);
+            line-height: 1.8;
+            margin-bottom: 24px;
+        }
+
+        .modal-features {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 8px;
+            margin-bottom: 28px;
+        }
+
+        .mf-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 13px;
+            color: var(--text-mid);
+            padding: 10px;
+            background: var(--bg);
+            border-radius: 10px;
+        }
+
+        .modal-contact {
+            background: linear-gradient(135deg, rgba(37, 99, 235, .06), rgba(245, 158, 11, .06));
+            border-radius: var(--radius-sm);
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+
+        .mc-phone {
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--navy);
+        }
+
+        .mc-label {
+            font-size: 13px;
+            color: var(--text-mid);
+        }
+
+        .modal-actions {
+            display: flex;
+            gap: 12px;
+        }
+
+        /* ── TOAST ── */
+        .toast {
+            position: fixed;
+            bottom: 32px;
+            left: 50%;
+            transform: translateX(-50%) translateY(20px);
+            background: var(--navy);
+            color: white;
+            padding: 14px 24px;
+            border-radius: 100px;
+            font-size: 14px;
+            font-weight: 500;
+            z-index: 9999;
+            opacity: 0;
+            transition: all .3s var(--bounce);
+            pointer-events: none;
+            white-space: nowrap;
+        }
+
+        .toast.show {
+            opacity: 1;
+            transform: translateX(-50%) translateY(0);
+        }
+
+        /* ── ANIMATIONS ── */
+        [data-fade] {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity .7s ease, transform .7s ease;
+        }
+
+        [data-fade].visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* ── RIPPLE ── */
+        .ripple {
+            position: absolute;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, .3);
+            transform: scale(0);
+            animation: rippleAnim .6s linear;
+            pointer-events: none;
+        }
+
+        @keyframes rippleAnim {
+            to {
+                transform: scale(4);
+                opacity: 0;
+            }
+        }
+
+        /* ── SCROLLBAR ── */
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: transparent;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--border);
+            border-radius: 100px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--text-light);
+        }
+
+        /* ── RESPONSIVE ── */
+        @media (max-width: 1100px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hero-content {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-right {
+                display: none;
+            }
+
+            .props-layout {
+                grid-template-columns: 1fr;
+            }
+
+            .filter-sidebar {
+                position: static;
+                display: none;
+            }
+
+            .filter-sidebar.open {
+                display: block;
+            }
+
+            .filter-toggle-btn {
+                display: block;
+            }
+
+            .about-inner {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-inner {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 36px;
+            }
+
+            .stats-inner {
+                flex-wrap: wrap;
+                gap: 24px;
+            }
+
+            .stat-sep {
+                display: none;
+            }
+
+            .modal-meta-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .modal-features {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-inner {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                gap: 16px;
+                text-align: center;
+            }
+
+            .cart-panel {
+                width: 100%;
+                right: -100%;
+            }
+
+            .search-bar {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .sb-divider {
+                display: none;
+            }
+
+            .districts-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-inner">
+            <a href="#" class="nav-logo">
+                <span class="logo-icon">⬡</span>
+                <span class="logo-text">LuxEstate</span>
+            </a>
+
+            <ul class="nav-links">
+                <li><a href="#hero" class="nav-link active"><span class="nav-icon">🏠</span>Bosh sahifa</a></li>
+                <li><a href="#properties" class="nav-link"><span class="nav-icon">🏘️</span>Uylar</a></li>
+                <li><a href="#districts" class="nav-link"><span class="nav-icon">🗺️</span>Tumanlar</a></li>
+                <li><a href="#map-section" class="nav-link"><span class="nav-icon">📍</span>Xarita</a></li>
+                <li><a href="#favorites-page" class="nav-link" id="favNavLink"><span
+                            class="nav-icon">❤️</span>Tanlanganlar</a></li>
+                <li><a href="#about" class="nav-link"><span class="nav-icon">ℹ️</span>Biz haqimizda</a></li>
+                <li><a href="#contact" class="nav-link"><span class="nav-icon">📞</span>Bog'lanish</a></li>
+            </ul>
+
+            <div class="nav-actions">
+                <div class="search-wrapper">
+                    <input type="text" class="nav-search" id="navSearch" placeholder="Uy, tuman yoki narx..."
+                        autocomplete="off" />
+                    <span class="search-icon">🔍</span>
+                    <div class="search-dropdown" id="searchDropdown"></div>
+                </div>
+                <button class="nav-btn fav-btn" id="favBtn" title="Tanlanganlar">
+                    <span>❤️</span>
+                    <span class="fav-count" id="favCount">0</span>
+                </button>
+                <button class="nav-btn cart-btn" id="cartBtn" title="Savat">
+                    <span>🛒</span>
+                    <span class="cart-count" id="cartCount">0</span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- CART PANEL -->
+    <div class="cart-overlay" id="cartOverlay"></div>
+    <aside class="cart-panel" id="cartPanel">
+        <div class="cart-header">
+            <h3>🛒 Savatingiz</h3>
+            <button class="cart-close" id="cartClose">✕</button>
+        </div>
+        <div class="cart-items" id="cartItems"></div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>Jami:</span>
+                <strong id="cartTotal">$0</strong>
+            </div>
+            <button class="btn-checkout">Buyurtma berish</button>
+        </div>
+    </aside>
+
+    <!-- HERO -->
+    <section class="hero" id="hero">
+        <div class="hero-bg">
+            <div class="hero-orb orb1"></div>
+            <div class="hero-orb orb2"></div>
+            <div class="hero-orb orb3"></div>
+            <div class="hero-grid"></div>
+        </div>
+        <div class="hero-content">
+            <div class="hero-left" data-parallax="0.3">
+                <div class="hero-badge">🏆 Toshkentning #1 Ko'chmas Mulk Platformasi</div>
+                <h1 class="hero-title">
+                    O'zingizga mos<br />
+                    <span class="gradient-text">mukammal uy</span><br />
+                    toping
+                </h1>
+                <p class="hero-sub">Toshkentning barcha tumanlarida 120+ premium uylar. Zamonaviy, qulay va ishonchli
+                    ko'chmas mulk xizmati.</p>
+
+                <div class="hero-search">
+                    <div class="search-tabs">
+                        <button class="stab active">Sotib olish</button>
+                        <button class="stab">Ijaraga olish</button>
+                        <button class="stab">Yangi qurilish</button>
+                    </div>
+                    <div class="search-bar">
+                        <div class="sb-field">
+                            <label>📍 Tuman</label>
+                            <select id="heroDistrict">
+                                <option value="">Barcha tumanlar</option>
+                                <option>Yunusobod</option>
+                                <option>Chilonzor</option>
+                                <option>Mirzo Ulugbek</option>
+                                <option>Shayxontohur</option>
+                                <option>Yakkasaroy</option>
+                                <option>Sergeli</option>
+                                <option>Bektemir</option>
+                                <option>Olmazor</option>
+                                <option>Uchtepa</option>
+                                <option>Yashnobod</option>
+                                <option>Mirobod</option>
+                                <option>Yangihayot</option>
+                            </select>
+                        </div>
+                        <div class="sb-divider"></div>
+                        <div class="sb-field">
+                            <label>🛏️ Xonalar</label>
+                            <select id="heroRooms">
+                                <option value="">Istalgan</option>
+                                <option>1 xona</option>
+                                <option>2 xona</option>
+                                <option>3 xona</option>
+                                <option>4+ xona</option>
+                            </select>
+                        </div>
+                        <div class="sb-divider"></div>
+                        <div class="sb-field">
+                            <label>💰 Narx</label>
+                            <select id="heroPrice">
+                                <option value="">Istalgan</option>
+                                <option>$50,000 gacha</option>
+                                <option>$50,000 – $100,000</option>
+                                <option>$100,000 – $200,000</option>
+                                <option>$200,000+</option>
+                            </select>
+                        </div>
+                        <button class="hero-search-btn" id="heroSearchBtn">
+                            🔍 Qidirish
+                        </button>
+                    </div>
+                </div>
+
+                <div class="hero-ctas">
+                    <a href="#properties" class="btn-primary">Barcha uylarni ko'rish →</a>
+                    <a href="#map-section" class="btn-ghost">📍 Xaritada ko'rish</a>
+                </div>
+            </div>
+
+            <div class="hero-right" data-parallax="0.15">
+                <div class="hero-img-wrap">
+                    <div class="hero-img-glow"></div>
+                    <img src="https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=600&q=80"
+                        alt="Luxury House" class="hero-img" />
+                    <div class="hero-float-card card-top">
+                        <div class="hfc-icon">🏠</div>
+                        <div>
+                            <div class="hfc-num">120+</div>
+                            <div class="hfc-label">Premium Uylar</div>
+                        </div>
+                    </div>
+                    <div class="hero-float-card card-mid">
+                        <div class="hfc-icon">🗺️</div>
+                        <div>
+                            <div class="hfc-num">12</div>
+                            <div class="hfc-label">Tuman</div>
+                        </div>
+                    </div>
+                    <div class="hero-float-card card-bot">
+                        <div class="hfc-icon">👥</div>
+                        <div>
+                            <div class="hfc-num">500+</div>
+                            <div class="hfc-label">Mamnun Mijoz</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="hero-scroll">
+            <div class="scroll-line"></div>
+            <span>Pastga aylantiring</span>
+        </div>
+    </section>
+
+    <!-- STATS STRIP -->
+    <section class="stats-strip">
+        <div class="stats-inner">
+            <div class="stat-item" data-animate>
+                <div class="stat-num" data-count="120">0</div>
+                <div class="stat-label">Premium Uylar</div>
+            </div>
+            <div class="stat-sep">|</div>
+            <div class="stat-item" data-animate>
+                <div class="stat-num" data-count="12">0</div>
+                <div class="stat-label">Tuman</div>
+            </div>
+            <div class="stat-sep">|</div>
+            <div class="stat-item" data-animate>
+                <div class="stat-num" data-count="500">0</div>
+                <div class="stat-label">Mamnun Mijoz</div>
+            </div>
+            <div class="stat-sep">|</div>
+            <div class="stat-item" data-animate>
+                <div class="stat-num" data-count="98">0</div>
+                <div class="stat-label">% Muvaffaqiyat</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- DISTRICTS -->
+    <section class="districts-section" id="districts">
+        <div class="section-header" data-fade>
+            <div class="section-tag">Tumanlar</div>
+            <h2 class="section-title">Toshkentning eng yaxshi<br /><span class="gradient-text">tumanlarini</span> kashf
+                eting</h2>
+            <p class="section-sub">Har bir tumanda premium va qulay uylar mavjud</p>
+        </div>
+        <div class="districts-grid" id="districtsGrid"></div>
+    </section>
+
+    <!-- FILTER + PROPERTIES -->
+    <section class="properties-section" id="properties">
+        <div class="section-header" data-fade>
+            <div class="section-tag">Ko'chmas Mulklar</div>
+            <h2 class="section-title">Premium <span class="gradient-text">uylar</span> kolleksiyasi</h2>
+            <p class="section-sub">120 ta tanlangan luxury va qulay uy</p>
+        </div>
+
+        <div class="props-layout">
+            <!-- FILTER SIDEBAR -->
+            <aside class="filter-sidebar" id="filterSidebar">
+                <div class="filter-head">
+                    <h3>🔧 Filtrlar</h3>
+                    <button class="filter-reset" id="filterReset">Tozalash</button>
+                </div>
+
+                <div class="filter-group">
+                    <label class="filter-label">📍 Tuman</label>
+                    <select class="filter-select" id="filterDistrict">
+                        <option value="">Barcha tumanlar</option>
+                        <option>Yunusobod</option>
+                        <option>Chilonzor</option>
+                        <option>Mirzo Ulugbek</option>
+                        <option>Shayxontohur</option>
+                        <option>Yakkasaroy</option>
+                        <option>Sergeli</option>
+                        <option>Bektemir</option>
+                        <option>Olmazor</option>
+                        <option>Uchtepa</option>
+                        <option>Yashnobod</option>
+                        <option>Mirobod</option>
+                        <option>Yangihayot</option>
+                    </select>
+                </div>
+
+                <div class="filter-group">
+                    <label class="filter-label">💰 Narx oralig'i</label>
+                    <div class="price-range">
+                        <div class="price-vals">
+                            <span id="priceMin">$30,000</span>
+                            <span id="priceMax">$500,000</span>
+                        </div>
+                        <input type="range" class="range-slider" id="rangeMin" min="30000" max="500000" value="30000"
+                            step="5000" />
+                        <input type="range" class="range-slider" id="rangeMax" min="30000" max="500000" value="500000"
+                            step="5000" />
+                    </div>
+                </div>
+
+                <div class="filter-group">
+                    <label class="filter-label">🛏️ Xonalar soni</label>
+                    <div class="room-btns">
+                        <button class="room-btn active" data-rooms="0">Barchasi</button>
+                        <button class="room-btn" data-rooms="1">1</button>
+                        <button class="room-btn" data-rooms="2">2</button>
+                        <button class="room-btn" data-rooms="3">3</button>
+                        <button class="room-btn" data-rooms="4">4+</button>
+                    </div>
+                </div>
+
+                <div class="filter-group">
+                    <label class="filter-label">📐 Maydon (m²)</label>
+                    <div class="price-vals">
+                        <span id="sizeMin">30 m²</span>
+                        <span id="sizeMax">500 m²</span>
+                    </div>
+                    <input type="range" class="range-slider" id="rangeSize" min="30" max="500" value="500" step="10" />
+                </div>
+
+                <div class="filter-group">
+                    <label class="filter-label">🔃 Saralash</label>
+                    <select class="filter-select" id="filterSort">
+                        <option value="newest">Yangilari birinchi</option>
+                        <option value="price-asc">Narx: arzondan qimmatlga</option>
+                        <option value="price-desc">Narx: qimmatldan arzonga</option>
+                        <option value="size-desc">Maydon: kattadan kichikka</option>
+                        <option value="rating">Reyting bo'yicha</option>
+                    </select>
+                </div>
+
+                <button class="btn-apply-filter" id="applyFilter">✓ Filtrni qo'llash</button>
+            </aside>
+
+            <!-- PROPERTIES GRID -->
+            <div class="props-main">
+                <div class="props-toolbar">
+                    <span class="props-count" id="propsCount">120 ta uy topildi</span>
+                    <button class="filter-toggle-btn" id="filterToggle">⚙️ Filtrlar</button>
+                </div>
+                <div class="properties-grid" id="propertiesGrid"></div>
+                <div class="load-more-wrap" id="loadMoreWrap">
+                    <button class="btn-load-more" id="loadMoreBtn">
+                        <span>Barcha uylarni ko'rish</span>
+                        <span class="lm-count">(110 ta qoldi)</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- MAP SECTION -->
+    <section class="map-section" id="map-section">
+        <div class="section-header" data-fade>
+            <div class="section-tag">Xarita</div>
+            <h2 class="section-title">Xaritada <span class="gradient-text">uylarni</span> toping</h2>
+        </div>
+        <div class="map-container">
+            <div id="map" style="height:520px;border-radius:24px;overflow:hidden;"></div>
+            <div class="map-legend">
+                <div class="ml-item"><span class="ml-dot blue"></span> Arzon ($30k–$80k)</div>
+                <div class="ml-item"><span class="ml-dot gold"></span> O'rta ($80k–$200k)</div>
+                <div class="ml-item"><span class="ml-dot red"></span> Premium ($200k+)</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAVORITES PAGE (hidden by default) -->
+    <section class="favorites-page" id="favorites-page" style="display:none;">
+        <div class="section-header" data-fade>
+            <div class="section-tag">Tanlanganlar</div>
+            <h2 class="section-title">Sevimli <span class="gradient-text">uylaringiz</span></h2>
+        </div>
+        <div class="properties-grid" id="favoritesGrid"></div>
+        <div class="empty-state" id="favEmptyState" style="display:none;">
+            <div class="es-icon">❤️</div>
+            <h3>Hali hech narsa tanlanmagan</h3>
+            <p>Uylarni ko'rib, yurakcha belgisini bosing</p>
+            <a href="#properties" class="btn-primary">Uylarni ko'rish</a>
+        </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section class="about-section" id="about">
+        <div class="about-inner">
+            <div class="about-left" data-fade>
+                <div class="section-tag">Biz haqimizda</div>
+                <h2 class="section-title">Toshkentda <span class="gradient-text">ishonchli</span> hamkor</h2>
+                <p class="about-text">LuxEstate — 2018 yildan buyon Toshkent ko'chmas mulk bozorida faoliyat yuritib
+                    kelayotgan yetakchi platforma. Bizning jamoamiz 50+ professional mutaxassislardan iborat bo'lib,
+                    sizga eng yaxshi uyni topishda yordam berishga tayyor.</p>
+                <div class="about-features">
+                    <div class="af-item">✅ Ishonchli va sertifikatlangan mulklar</div>
+                    <div class="af-item">✅ Yuridik qo'llab-quvvatlash</div>
+                    <div class="af-item">✅ 24/7 mijozlar xizmati</div>
+                    <div class="af-item">✅ Shaffof narxlar</div>
+                </div>
+            </div>
+            <div class="about-right" data-fade>
+                <div class="about-img-grid">
+                    <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=400&q=80" alt="Office"
+                        class="ag-img ag-main" />
+                    <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=300&q=80" alt="Building"
+                        class="ag-img ag-sm1" />
+                    <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=300&q=80" alt="Team"
+                        class="ag-img ag-sm2" />
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="contact-section" id="contact">
+        <div class="section-header" data-fade>
+            <div class="section-tag">Bog'lanish</div>
+            <h2 class="section-title">Biz bilan <span class="gradient-text">bog'laning</span></h2>
+        </div>
+        <div class="contact-grid">
+            <div class="contact-info" data-fade>
+                <div class="ci-item">
+                    <div class="ci-icon">📍</div>
+                    <div>
+                        <div class="ci-title">Manzil</div>
+                        <div class="ci-text">Toshkent sh., Yunusobod tumani, Amir Temur ko'chasi 108</div>
+                    </div>
+                </div>
+                <div class="ci-item">
+                    <div class="ci-icon">📞</div>
+                    <div>
+                        <div class="ci-title">Telefon</div>
+                        <div class="ci-text">+998 71 200 00 00</div>
+                    </div>
+                </div>
+                <div class="ci-item">
+                    <div class="ci-icon">✉️</div>
+                    <div>
+                        <div class="ci-title">Email</div>
+                        <div class="ci-text">info@luxestate.uz</div>
+                    </div>
+                </div>
+                <div class="ci-item">
+                    <div class="ci-icon">🕐</div>
+                    <div>
+                        <div class="ci-title">Ish vaqti</div>
+                        <div class="ci-text">Du–Sha: 9:00–18:00, Yak: Dam olish</div>
+                    </div>
+                </div>
+            </div>
+            <form class="contact-form" data-fade onsubmit="submitContact(event)">
+                <div class="cf-row">
+                    <div class="cf-group">
+                        <label>Ismingiz</label>
+                        <input type="text" placeholder="Sarvar Karimov" required />
+                    </div>
+                    <div class="cf-group">
+                        <label>Telefon</label>
+                        <input type="tel" placeholder="+998 90 123 45 67" required />
+                    </div>
+                </div>
+                <div class="cf-group">
+                    <label>Email</label>
+                    <input type="email" placeholder="sarvar@example.com" />
+                </div>
+                <div class="cf-group">
+                    <label>Xabar</label>
+                    <textarea placeholder="Sizga qanday yordam bera olamiz?" rows="4"></textarea>
+                </div>
+                <button type="submit" class="btn-primary">📨 Xabar yuborish</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer" id="footer">
+        <div class="footer-inner">
+            <div class="footer-brand">
+                <div class="footer-logo">
+                    <span class="logo-icon">⬡</span>
+                    <span class="logo-text">LuxEstate</span>
+                </div>
+                <p class="footer-tagline">Toshkentda mukammal uy topish uchun<br />eng ishonchli platforma.</p>
+                <div class="footer-socials">
+                    <a href="#" class="social-link">📘</a>
+                    <a href="#" class="social-link">📸</a>
+                    <a href="#" class="social-link">🐦</a>
+                    <a href="#" class="social-link">💼</a>
+                    <a href="#" class="social-link">▶️</a>
+                </div>
+            </div>
+
+            <div class="footer-links">
+                <h4>Tezkor havolalar</h4>
+                <ul>
+                    <li><a href="#hero">Bosh sahifa</a></li>
+                    <li><a href="#properties">Uylar</a></li>
+                    <li><a href="#districts">Tumanlar</a></li>
+                    <li><a href="#map-section">Xarita</a></li>
+                    <li><a href="#about">Biz haqimizda</a></li>
+                    <li><a href="#contact">Bog'lanish</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-links">
+                <h4>Xizmatlar</h4>
+                <ul>
+                    <li><a href="#">Uy sotib olish</a></li>
+                    <li><a href="#">Uy sotish</a></li>
+                    <li><a href="#">Ijaraga berish</a></li>
+                    <li><a href="#">Baholash</a></li>
+                    <li><a href="#">Konsultatsiya</a></li>
+                    <li><a href="#">Ipoteka</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-newsletter">
+                <h4>Yangiliklar</h4>
+                <p>Eng yangi uylar va takliflardan xabardor bo'ling</p>
+                <div class="nl-form">
+                    <input type="email" placeholder="Email manzilingiz" />
+                    <button>→</button>
+                </div>
+                <div class="footer-trust">
+                    <span>🔒 Spam yo'q</span>
+                    <span>📧 Har hafta</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <span>© 2024 LuxEstate. Barcha huquqlar himoyalangan.</span>
+            <div class="fb-links">
+                <a href="#">Maxfiylik siyosati</a>
+                <a href="#">Foydalanish shartlari</a>
+                <a href="#">Cookie</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- PROPERTY DETAIL MODAL -->
+    <div class="modal-overlay" id="modalOverlay">
+        <div class="property-modal" id="propertyModal">
+            <button class="modal-close" id="modalClose">✕</button>
+            <div class="modal-content" id="modalContent"></div>
+        </div>
+    </div>
+
+    <!-- TOAST -->
+    <div class="toast" id="toast"></div>
+
+    <script>
+        /* ============================================
+   LUXESTATE — PREMIUM REAL ESTATE JAVASCRIPT
+   Full Featured: Cart, Favorites, Search, Map, Animations
+   ============================================ */
+
+        'use strict';
+
+        // ── DATA: 120 PROPERTIES ──
+        const DISTRICTS = ['Yunusobod', 'Chilonzor', 'Mirzo Ulugbek', 'Shayxontohur', 'Yakkasaroy', 'Sergeli', 'Bektemir', 'Olmazor', 'Uchtepa', 'Yashnobod', 'Mirobod', 'Yangihayot'];
+
+        const DISTRICT_IMAGES = {
+            'Yunusobod': 'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=400&q=80',
+            'Chilonzor': 'https://images.unsplash.com/photo-1448630360428-65456885c650?w=400&q=80',
+            'Mirzo Ulugbek': 'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=400&q=80',
+            'Shayxontohur': 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=400&q=80',
+            'Yakkasaroy': 'https://images.unsplash.com/photo-1605146769289-440113cc3d00?w=400&q=80',
+            'Sergeli': 'https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?w=400&q=80',
+            'Bektemir': 'https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?w=400&q=80',
+            'Olmazor': 'https://images.unsplash.com/photo-1580587771525-78b9dba3b914?w=400&q=80',
+            'Uchtepa': 'https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=400&q=80',
+            'Yashnobod': 'https://images.unsplash.com/photo-1570129477492-45c003edd2be?w=400&q=80',
+            'Mirobod': 'https://images.unsplash.com/photo-1572120360610-d971b9d7767c?w=400&q=80',
+            'Yangihayot': 'https://images.unsplash.com/photo-1484154218962-a197022b5858?w=400&q=80',
+        };
+
+        const HOUSE_IMAGES = [
+            'https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=500&q=80',
+            'https://images.unsplash.com/photo-1568605114967-8130f3a36994?w=500&q=80',
+            'https://images.unsplash.com/photo-1583608205776-bfd35f0d9f83?w=500&q=80',
+            'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=500&q=80',
+            'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=500&q=80',
+            'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=500&q=80',
+            'https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=500&q=80',
+            'https://images.unsplash.com/photo-1580587771525-78b9dba3b914?w=500&q=80',
+            'https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=500&q=80',
+            'https://images.unsplash.com/photo-1570129477492-45c003edd2be?w=500&q=80',
+            'https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?w=500&q=80',
+            'https://images.unsplash.com/photo-1605146769289-440113cc3d00?w=500&q=80',
+            'https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?w=500&q=80',
+            'https://images.unsplash.com/photo-1572120360610-d971b9d7767c?w=500&q=80',
+            'https://images.unsplash.com/photo-1448630360428-65456885c650?w=500&q=80',
+            'https://images.unsplash.com/photo-1484154218962-a197022b5858?w=500&q=80',
+        ];
+
+        const TITLES = [
+            'Zamonaviy Penthouse Apartment', 'Luxury Villa with Garden', 'Premium Studio Flat',
+            'Elite Family Residence', 'Modern Duplex Suite', 'Classic Heritage Home',
+            'Smart City Apartment', 'Panoramic View Penthouse', 'Cozy Urban Retreat',
+            'Contemporary Loft Space', 'Royal Garden Villa', 'Minimalist Design Home',
+            'Sky-High Executive Suite', 'Serene Suburban House', 'Chic City Apartment',
+            'Grand Estate Residence', 'Boutique Urban Studio', 'Riverside Dream Home',
+        ];
+
+        const FEATURES = ['🛗 Lift', '🏊 Hovuz', '🅿️ Toʻxtash joyi', '🏋️ Sport zal', '🌿 Bog\'', '🔒 Qoʻriqxona', '❄️ Konditsioner', '🔥 Isitish', '📶 Wi-Fi', '🐾 Uy hayvonlari', '🏠 Veranda', '🌆 Manzara'];
+
+        const DESCRIPTIONS = [
+            'Zamonaviy pardozlash bilan bezatilgan bu uy sizga qulaylik va hashamatni taqdim etadi. Barcha jihozlar premium sifatli.',
+            'Keng va yorqin xonalar, zamonaviy oshxona va katta hovliga ega bu uy oila uchun ideal tanlov.',
+            'Shaharning markazida joylashgan bu kvartira transport va infratuzilmaga yaqin. Premium dizayn.',
+            'Tepalikda joylashgan bu villa shaharning panorama manzarasini taqdim etadi. Hashamatli yashash uchun.',
+            'Yangi qurilish binodagi bu zamonaviy kvartira barcha qulay sharoitlarga ega. Uzoq muddatga mo\'ljallangan.',
+        ];
+
+        const TASHKENT_COORDS = { lat: 41.2995, lng: 69.2401 };
+
+        function randInt(min, max) { return Math.floor(Math.random() * (max - min + 1)) + min; }
+        function randFrom(arr) { return arr[Math.floor(Math.random() * arr.length)]; }
+        function randFloat(min, max) { return (Math.random() * (max - min) + min).toFixed(1); }
+
+        // Generate 120 properties
+        const PROPERTIES = Array.from({ length: 120 }, (_, i) => {
+            const id = i + 1;
+            const district = DISTRICTS[i % DISTRICTS.length];
+            const rooms = randInt(1, 5);
+            const size = randInt(35, 350);
+            const basePrice = rooms * randInt(18000, 45000) + size * randInt(200, 600);
+            const price = Math.round(basePrice / 1000) * 1000;
+            const rating = parseFloat(randFloat(3.8, 5.0));
+            const isNew = i < 20;
+
+            return {
+                id,
+                title: TITLES[i % TITLES.length] + (i >= TITLES.length ? ` ${Math.floor(i / TITLES.length) + 1}` : ''),
+                image: HOUSE_IMAGES[i % HOUSE_IMAGES.length],
+                price,
+                district,
+                rooms,
+                size,
+                rating,
+                isNew,
+                description: DESCRIPTIONS[i % DESCRIPTIONS.length],
+                features: FEATURES.slice(0, randInt(4, 8)),
+                address: `${district}, ${randInt(1, 50)}-uy, ${randInt(1, 10)}-xona`,
+                phone: `+998 9${randInt(0, 9)} ${randInt(100, 999)} ${randInt(10, 99)} ${randInt(10, 99)}`,
+                latitude: TASHKENT_COORDS.lat + (Math.random() - 0.5) * 0.12,
+                longitude: TASHKENT_COORDS.lng + (Math.random() - 0.5) * 0.18,
+                createdAt: Date.now() - i * 86400000,
+            };
+        });
+
+        // ── STATE ──
+        let cart = JSON.parse(localStorage.getItem('lux_cart') || '[]');
+        let favorites = JSON.parse(localStorage.getItem('lux_favs') || '[]');
+        let filteredProperties = [...PROPERTIES];
+        let visibleCount = 10;
+        let filterRoomsVal = 0;
+        let googleMap = null;
+        let mapMarkers = [];
+
+        // ── INIT ──
+        document.addEventListener('DOMContentLoaded', () => {
+            renderDistricts();
+            renderProperties();
+            updateCartUI();
+            updateFavUI();
+            initNavbar();
+            initSearch();
+            initFilters();
+            initAnimations();
+            initParallax();
+            initStats();
+            initSearchTabs();
+            initGoogleMap();
+
+            document.getElementById('cartBtn').addEventListener('click', openCart);
+            document.getElementById('cartClose').addEventListener('click', closeCart);
+            document.getElementById('cartOverlay').addEventListener('click', closeCart);
+            document.getElementById('favBtn').addEventListener('click', showFavoritesPage);
+            document.getElementById('favNavLink').addEventListener('click', (e) => { e.preventDefault(); showFavoritesPage(); });
+            document.getElementById('loadMoreBtn').addEventListener('click', loadMore);
+            document.getElementById('heroSearchBtn').addEventListener('click', heroSearch);
+            document.getElementById('applyFilter').addEventListener('click', applyFilters);
+            document.getElementById('filterReset').addEventListener('click', resetFilters);
+            document.getElementById('filterToggle').addEventListener('click', toggleFilterSidebar);
+            document.getElementById('modalClose').addEventListener('click', closeModal);
+            document.getElementById('modalOverlay').addEventListener('click', (e) => {
+                if (e.target === document.getElementById('modalOverlay')) closeModal();
+            });
+        });
+
+        // ── NAVBAR ──
+        function initNavbar() {
+            const navbar = document.getElementById('navbar');
+            window.addEventListener('scroll', () => {
+                navbar.classList.toggle('scrolled', window.scrollY > 30);
+                updateActiveNavLink();
+            });
+
+            // Smooth nav clicks
+            document.querySelectorAll('.nav-link:not(#favNavLink)').forEach(link => {
+                link.addEventListener('click', (e) => {
+                    const href = link.getAttribute('href');
+                    if (href && href.startsWith('#')) {
+                        e.preventDefault();
+                        const target = document.querySelector(href);
+                        if (target) {
+                            target.scrollIntoView({ behavior: 'smooth' });
+                            // Hide favorites if showing
+                            hideFavoritesPage();
+                        }
+                    }
+                });
+            });
+        }
+
+        function updateActiveNavLink() {
+            const sections = ['hero', 'properties', 'districts', 'map-section', 'about', 'contact'];
+            let current = '';
+            sections.forEach(id => {
+                const el = document.getElementById(id);
+                if (el && el.getBoundingClientRect().top <= 150) current = id;
+            });
+            document.querySelectorAll('.nav-link').forEach(link => {
+                const href = link.getAttribute('href');
+                link.classList.toggle('active', href === `#${current}`);
+            });
+        }
+
+        // ── SEARCH ──
+        function initSearch() {
+            const input = document.getElementById('navSearch');
+            const dropdown = document.getElementById('searchDropdown');
+
+            input.addEventListener('input', () => {
+                const q = input.value.trim().toLowerCase();
+                if (q.length < 2) { dropdown.classList.remove('open'); return; }
+
+                const results = PROPERTIES.filter(p =>
+                    p.title.toLowerCase().includes(q) ||
+                    p.district.toLowerCase().includes(q) ||
+                    String(p.price).includes(q) ||
+                    String(p.rooms).includes(q)
+                ).slice(0, 6);
+
+                if (results.length === 0) { dropdown.classList.remove('open'); return; }
+
+                dropdown.innerHTML = results.map(p => `
+      <div class="sd-item" onclick="openPropertyModal(${p.id})">
+        <img class="sd-img" src="${p.image}" alt="${p.title}" loading="lazy"/>
+        <div class="sd-info">
+          <div class="sd-title">${p.title}</div>
+          <div class="sd-meta">📍 ${p.district} · ${p.rooms} xona · ${p.size} m²</div>
+        </div>
+        <div class="sd-price">$${p.price.toLocaleString()}</div>
+      </div>
+    `).join('');
+                dropdown.classList.add('open');
+            });
+
+            document.addEventListener('click', (e) => {
+                if (!e.target.closest('.search-wrapper')) dropdown.classList.remove('open');
+            });
+
+            input.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape') { dropdown.classList.remove('open'); input.value = ''; }
+            });
+        }
+
+        // ── DISTRICTS ──
+        const DISTRICT_COUNTS = {};
+        PROPERTIES.forEach(p => { DISTRICT_COUNTS[p.district] = (DISTRICT_COUNTS[p.district] || 0) + 1; });
+
+        function renderDistricts() {
+            const grid = document.getElementById('districtsGrid');
+            grid.innerHTML = DISTRICTS.map((d, i) => `
+    <div class="district-card" style="animation-delay:${i * 0.06}s" data-fade onclick="filterByDistrict('${d}')">
+      <img src="${DISTRICT_IMAGES[d]}" alt="${d}" loading="lazy"/>
+      <div class="dc-info">
+        <div class="dc-name">${d}</div>
+        <div class="dc-count">${DISTRICT_COUNTS[d] || 0} ta mulk</div>
+      </div>
+      <div class="dc-arrow">→</div>
+    </div>
+  `).join('');
+        }
+
+        function filterByDistrict(district) {
+            document.getElementById('filterDistrict').value = district;
+            applyFilters();
+            document.getElementById('properties').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // ── PROPERTY CARDS ──
+        function renderProperties() {
+            const grid = document.getElementById('propertiesGrid');
+            const slice = filteredProperties.slice(0, visibleCount);
+
+            grid.innerHTML = slice.map((p, i) => createPropertyCard(p, i)).join('');
+
+            // Update count
+            document.getElementById('propsCount').textContent = `${filteredProperties.length} ta uy topildi`;
+
+            // Load more
+            const lmWrap = document.getElementById('loadMoreWrap');
+            const lmBtn = document.getElementById('loadMoreBtn');
+            if (filteredProperties.length <= visibleCount) {
+                lmWrap.style.display = 'none';
+            } else {
+                lmWrap.style.display = 'block';
+                const remaining = filteredProperties.length - visibleCount;
+                lmBtn.innerHTML = `<span>Barcha uylarni ko'rish</span><span class="lm-count">(${remaining} ta qoldi)</span>`;
+            }
+
+            init3DTilt();
+            initCardButtons();
+            initCardFadeIn();
+        }
+
+        function createPropertyCard(p, delay = 0) {
+            const inCart = cart.some(c => c.id === p.id);
+            const inFav = favorites.includes(p.id);
+            const stars = '★'.repeat(Math.floor(p.rating)) + (p.rating % 1 >= 0.5 ? '★' : '☆') + '☆'.repeat(5 - Math.ceil(p.rating));
+
+            return `
+    <div class="property-card" data-id="${p.id}" style="animation-delay:${delay * 0.05}s">
+      <div class="card-img-wrap">
+        <img src="${p.image}" alt="${p.title}" loading="lazy"/>
+        <div class="card-price-badge">$${p.price.toLocaleString()}</div>
+        ${p.isNew ? '<div class="card-new-badge">Yangi</div>' : ''}
+        <button class="card-fav-btn ${inFav ? 'active' : ''}" data-fav="${p.id}" onclick="toggleFavorite(${p.id}, event)">${inFav ? '❤️' : '🤍'}</button>
+      </div>
+      <div class="card-body" onclick="openPropertyModal(${p.id})">
+        <div class="card-district">📍 ${p.district}</div>
+        <div class="card-title">${p.title}</div>
+        <div class="card-meta">
+          <div class="cm-item">🛏️ ${p.rooms} xona</div>
+          <div class="cm-item">📐 ${p.size} m²</div>
+          <div class="cm-item">⭐ ${p.rating}</div>
+        </div>
+        <div class="card-rating">
+          <span class="stars">${stars.slice(0, 5)}</span>
+          <span class="rating-num">${p.rating} / 5.0</span>
+        </div>
+        <p class="card-desc">${p.description}</p>
+      </div>
+      <div class="card-actions">
+        <div class="btn-detail" onclick="openPropertyModal(${p.id})">Batafsil ko'rish →</div>
+        <button class="btn-cart ${inCart ? 'in-cart' : ''}" data-cart="${p.id}" onclick="addToCart(${p.id}, event)">${inCart ? '✓' : '🛒'}</button>
+      </div>
+    </div>
+  `;
+        }
+
+        function initCardFadeIn() {
+            const cards = document.querySelectorAll('.property-card');
+            cards.forEach((card, i) => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(20px)';
+                setTimeout(() => {
+                    card.style.transition = 'opacity .4s ease, transform .4s ease';
+                    card.style.opacity = '1';
+                    card.style.transform = 'translateY(0)';
+                }, i * 50);
+            });
+        }
+
+        // ── 3D TILT ──
+        function init3DTilt() {
+            document.querySelectorAll('.property-card').forEach(card => {
+                card.addEventListener('mousemove', (e) => {
+                    const rect = card.getBoundingClientRect();
+                    const x = ((e.clientX - rect.left) / rect.width - 0.5) * 12;
+                    const y = ((e.clientY - rect.top) / rect.height - 0.5) * -12;
+                    card.style.transform = `perspective(800px) rotateY(${x}deg) rotateX(${y}deg) translateZ(8px)`;
+                });
+
+                card.addEventListener('mouseleave', () => {
+                    card.style.transform = 'perspective(800px) rotateY(0) rotateX(0) translateZ(0)';
+                });
+            });
+        }
+
+        // ── CARD BUTTONS ──
+        function initCardButtons() {
+            // Ripple effect on all buttons
+            document.querySelectorAll('.btn-primary, .btn-detail, .btn-cart, .btn-checkout, .btn-apply-filter').forEach(btn => {
+                btn.addEventListener('click', function (e) {
+                    const ripple = document.createElement('span');
+                    ripple.className = 'ripple';
+                    const rect = this.getBoundingClientRect();
+                    const size = Math.max(rect.width, rect.height);
+                    ripple.style.cssText = `width:${size}px;height:${size}px;left:${e.clientX - rect.left - size / 2}px;top:${e.clientY - rect.top - size / 2}px`;
+                    this.style.position = 'relative';
+                    this.style.overflow = 'hidden';
+                    this.appendChild(ripple);
+                    setTimeout(() => ripple.remove(), 600);
+                });
+            });
+        }
+
+        // ── CART ──
+        function addToCart(id, event) {
+            if (event) event.stopPropagation();
+            const prop = PROPERTIES.find(p => p.id === id);
+            if (!prop) return;
+
+            const existing = cart.find(c => c.id === id);
+            if (existing) {
+                existing.qty += 1;
+                showToast(`"${prop.title}" savatchada ko'paytirildi`);
+            } else {
+                cart.push({ ...prop, qty: 1 });
+                showToast(`"${prop.title}" savatchaga qo'shildi 🛒`);
+            }
+
+            saveCart();
+            updateCartUI();
+
+            // Update button states
+            document.querySelectorAll(`[data-cart="${id}"]`).forEach(btn => {
+                btn.classList.add('in-cart');
+                btn.textContent = '✓';
+            });
+
+            // Bounce cart button
+            const cartBtn = document.getElementById('cartBtn');
+            cartBtn.style.transform = 'scale(1.3)';
+            setTimeout(() => cartBtn.style.transform = '', 200);
+        }
+
+        function removeFromCart(id) {
+            cart = cart.filter(c => c.id !== id);
+            saveCart();
+            updateCartUI();
+            renderCartItems();
+            document.querySelectorAll(`[data-cart="${id}"]`).forEach(btn => {
+                btn.classList.remove('in-cart');
+                btn.textContent = '🛒';
+            });
+        }
+
+        function changeQty(id, delta) {
+            const item = cart.find(c => c.id === id);
+            if (!item) return;
+            item.qty += delta;
+            if (item.qty <= 0) return removeFromCart(id);
+            saveCart();
+            updateCartUI();
+            renderCartItems();
+        }
+
+        function saveCart() { localStorage.setItem('lux_cart', JSON.stringify(cart)); }
+
+        function updateCartUI() {
+            const count = cart.reduce((s, c) => s + c.qty, 0);
+            document.getElementById('cartCount').textContent = count;
+            renderCartItems();
+
+            // Update total
+            const total = cart.reduce((s, c) => s + c.price * c.qty, 0);
+            document.getElementById('cartTotal').textContent = '$' + total.toLocaleString();
+        }
+
+        function renderCartItems() {
+            const container = document.getElementById('cartItems');
+            if (cart.length === 0) {
+                container.innerHTML = `<div class="cart-empty"><div class="cart-empty-icon">🛒</div><div>Savatchangiz bo'sh</div></div>`;
+                return;
+            }
+
+            container.innerHTML = cart.map(item => `
+    <div class="cart-item" data-cart-item="${item.id}">
+      <img class="ci-img" src="${item.image}" alt="${item.title}" loading="lazy"/>
+      <div class="ci-details">
+        <div class="ci-title">${item.title}</div>
+        <div class="ci-district">📍 ${item.district}</div>
+        <div class="ci-price">$${item.price.toLocaleString()}</div>
+        <div class="ci-controls">
+          <button class="ci-qty-btn" onclick="changeQty(${item.id}, -1)">−</button>
+          <span class="ci-qty">${item.qty}</span>
+          <button class="ci-qty-btn" onclick="changeQty(${item.id}, 1)">+</button>
+        </div>
+      </div>
+      <button class="ci-remove" onclick="removeFromCart(${item.id})">🗑️</button>
+    </div>
+  `).join('');
+        }
+
+        function openCart() {
+            document.getElementById('cartPanel').classList.add('open');
+            document.getElementById('cartOverlay').classList.add('open');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeCart() {
+            document.getElementById('cartPanel').classList.remove('open');
+            document.getElementById('cartOverlay').classList.remove('open');
+            document.body.style.overflow = '';
+        }
+
+        // ── FAVORITES ──
+        function toggleFavorite(id, event) {
+            if (event) event.stopPropagation();
+            const prop = PROPERTIES.find(p => p.id === id);
+
+            if (favorites.includes(id)) {
+                favorites = favorites.filter(f => f !== id);
+                showToast(`"${prop.title}" tanlanganlardan olib tashlandi`);
+            } else {
+                favorites.push(id);
+                showToast(`"${prop.title}" tanlanganlariga qo'shildi ❤️`);
+            }
+
+            localStorage.setItem('lux_favs', JSON.stringify(favorites));
+            updateFavUI();
+
+            // Update fav buttons
+            document.querySelectorAll(`[data-fav="${id}"]`).forEach(btn => {
+                const isFav = favorites.includes(id);
+                btn.textContent = isFav ? '❤️' : '🤍';
+                btn.classList.toggle('active', isFav);
+            });
+
+            // Bounce fav button
+            const favBtn = document.getElementById('favBtn');
+            favBtn.style.transform = 'scale(1.3)';
+            setTimeout(() => favBtn.style.transform = '', 200);
+
+            // Re-render favorites grid if visible
+            if (document.getElementById('favorites-page').style.display !== 'none') {
+                renderFavorites();
+            }
+        }
+
+        function updateFavUI() {
+            document.getElementById('favCount').textContent = favorites.length;
+        }
+
+        function showFavoritesPage() {
+            // Hide other sections
+            ['hero', 'stats-strip', 'districts-section', 'properties-section', 'map-section', 'about-section', 'contact-section'].forEach(cls => {
+                const el = document.querySelector(`.${cls}`) || document.getElementById(cls.replace(/-section|s-section/, '-section').replace('stats-strip', 'stats-strip'));
+            });
+
+            document.getElementById('favorites-page').style.display = 'block';
+            renderFavorites();
+            document.getElementById('favorites-page').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function hideFavoritesPage() {
+            document.getElementById('favorites-page').style.display = 'none';
+        }
+
+        function renderFavorites() {
+            const grid = document.getElementById('favoritesGrid');
+            const empty = document.getElementById('favEmptyState');
+
+            if (favorites.length === 0) {
+                grid.innerHTML = '';
+                empty.style.display = 'block';
+                return;
+            }
+
+            empty.style.display = 'none';
+            const favProps = PROPERTIES.filter(p => favorites.includes(p.id));
+            grid.innerHTML = favProps.map((p, i) => createPropertyCard(p, i)).join('');
+            init3DTilt();
+            initCardButtons();
+        }
+
+        // ── FILTERS ──
+        function initFilters() {
+            const rangeMin = document.getElementById('rangeMin');
+            const rangeMax = document.getElementById('rangeMax');
+            const rangeSize = document.getElementById('rangeSize');
+
+            rangeMin.addEventListener('input', () => {
+                if (parseInt(rangeMin.value) > parseInt(rangeMax.value)) rangeMin.value = rangeMax.value;
+                document.getElementById('priceMin').textContent = '$' + parseInt(rangeMin.value).toLocaleString();
+                updateRangeStyle(rangeMin);
+            });
+
+            rangeMax.addEventListener('input', () => {
+                if (parseInt(rangeMax.value) < parseInt(rangeMin.value)) rangeMax.value = rangeMin.value;
+                document.getElementById('priceMax').textContent = '$' + parseInt(rangeMax.value).toLocaleString();
+                updateRangeStyle(rangeMax);
+            });
+
+            rangeSize.addEventListener('input', () => {
+                document.getElementById('sizeMax').textContent = rangeSize.value + ' m²';
+                updateRangeStyle(rangeSize);
+            });
+
+            // Room buttons
+            document.querySelectorAll('.room-btn').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    document.querySelectorAll('.room-btn').forEach(b => b.classList.remove('active'));
+                    btn.classList.add('active');
+                    filterRoomsVal = parseInt(btn.dataset.rooms);
+                });
+            });
+
+            // Search tabs
+            document.querySelectorAll('.stab').forEach(tab => {
+                tab.addEventListener('click', () => {
+                    document.querySelectorAll('.stab').forEach(t => t.classList.remove('active'));
+                    tab.classList.add('active');
+                });
+            });
+        }
+
+        function updateRangeStyle(input) {
+            const min = parseInt(input.min);
+            const max = parseInt(input.max);
+            const val = parseInt(input.value);
+            const pct = ((val - min) / (max - min)) * 100;
+            input.style.setProperty('--val', pct + '%');
+        }
+
+        function applyFilters() {
+            const district = document.getElementById('filterDistrict').value;
+            const minPrice = parseInt(document.getElementById('rangeMin').value);
+            const maxPrice = parseInt(document.getElementById('rangeMax').value);
+            const maxSize = parseInt(document.getElementById('rangeSize').value);
+            const sort = document.getElementById('filterSort').value;
+
+            filteredProperties = PROPERTIES.filter(p => {
+                if (district && p.district !== district) return false;
+                if (p.price < minPrice || p.price > maxPrice) return false;
+                if (p.size > maxSize) return false;
+                if (filterRoomsVal > 0) {
+                    if (filterRoomsVal === 4 && p.rooms < 4) return false;
+                    if (filterRoomsVal < 4 && p.rooms !== filterRoomsVal) return false;
+                }
+                return true;
+            });
+
+            // Sort
+            switch (sort) {
+                case 'price-asc': filteredProperties.sort((a, b) => a.price - b.price); break;
+                case 'price-desc': filteredProperties.sort((a, b) => b.price - a.price); break;
+                case 'size-desc': filteredProperties.sort((a, b) => b.size - a.size); break;
+                case 'rating': filteredProperties.sort((a, b) => b.rating - a.rating); break;
+                case 'newest': filteredProperties.sort((a, b) => b.createdAt - a.createdAt); break;
+            }
+
+            visibleCount = 10;
+            renderProperties();
+            document.getElementById('propertiesGrid').scrollIntoView({ behavior: 'smooth', block: 'start' });
+            showToast(`${filteredProperties.length} ta uy topildi`);
+
+            // Close filter sidebar on mobile
+            if (window.innerWidth < 1100) {
+                document.getElementById('filterSidebar').classList.remove('open');
+            }
+        }
+
+        function resetFilters() {
+            document.getElementById('filterDistrict').value = '';
+            document.getElementById('rangeMin').value = 30000;
+            document.getElementById('rangeMax').value = 500000;
+            document.getElementById('rangeSize').value = 500;
+            document.getElementById('filterSort').value = 'newest';
+            document.getElementById('priceMin').textContent = '$30,000';
+            document.getElementById('priceMax').textContent = '$500,000';
+            document.getElementById('sizeMax').textContent = '500 m²';
+            filterRoomsVal = 0;
+            document.querySelectorAll('.room-btn').forEach(b => b.classList.remove('active'));
+            document.querySelector('.room-btn[data-rooms="0"]').classList.add('active');
+            filteredProperties = [...PROPERTIES];
+            visibleCount = 10;
+            renderProperties();
+            showToast('Filtrlar tozalandi');
+        }
+
+        function toggleFilterSidebar() {
+            document.getElementById('filterSidebar').classList.toggle('open');
+        }
+
+        // ── LOAD MORE ──
+        function loadMore() {
+            visibleCount = filteredProperties.length;
+            renderProperties();
+            showToast('Barcha uylar ko\'rsatildi!');
+        }
+
+        // ── HERO SEARCH ──
+        function heroSearch() {
+            const district = document.getElementById('heroDistrict').value;
+            const rooms = document.getElementById('heroRooms').value;
+            const priceRange = document.getElementById('heroPrice').value;
+
+            if (district) document.getElementById('filterDistrict').value = district;
+
+            if (rooms) {
+                const num = parseInt(rooms);
+                if (!isNaN(num)) {
+                    filterRoomsVal = num;
+                    document.querySelectorAll('.room-btn').forEach(b => {
+                        b.classList.toggle('active', parseInt(b.dataset.rooms) === num);
+                    });
+                }
+            }
+
+            if (priceRange && priceRange.includes('–')) {
+                const [min, max] = priceRange.replace(/\$/g, '').replace(/,/g, '').split(' – ');
+                document.getElementById('rangeMin').value = parseInt(min);
+                document.getElementById('rangeMax').value = parseInt(max);
+                document.getElementById('priceMin').textContent = '$' + parseInt(min).toLocaleString();
+                document.getElementById('priceMax').textContent = '$' + parseInt(max).toLocaleString();
+            }
+
+            applyFilters();
+            document.getElementById('properties').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // ── SEARCH TABS ──
+        function initSearchTabs() {
+            document.querySelectorAll('.stab').forEach(tab => {
+                tab.addEventListener('click', () => {
+                    document.querySelectorAll('.stab').forEach(t => t.classList.remove('active'));
+                    tab.classList.add('active');
+                });
+            });
+        }
+
+        // ── PROPERTY MODAL ──
+        function openPropertyModal(id) {
+            const p = PROPERTIES.find(prop => prop.id === id);
+            if (!p) return;
+
+            const inCart = cart.some(c => c.id === id);
+            const inFav = favorites.includes(id);
+            const stars = '★'.repeat(Math.floor(p.rating)) + '☆'.repeat(5 - Math.floor(p.rating));
+
+            document.getElementById('modalContent').innerHTML = `
+    <div class="modal-gallery">
+      <img src="${p.image}" alt="${p.title}"/>
+    </div>
+    <div class="modal-body">
+      <div class="modal-header">
+        <div>
+          <div class="modal-district">📍 ${p.district} · ${p.address}</div>
+          <h2 class="modal-title">${p.title}</h2>
+          <div style="display:flex;align-items:center;gap:8px;margin-top:8px;">
+            <span class="stars" style="font-size:16px;">${stars}</span>
+            <span style="font-size:14px;color:#64748b;">${p.rating} / 5.0</span>
+          </div>
+        </div>
+        <div style="text-align:right;">
+          <div class="modal-price">$${p.price.toLocaleString()}</div>
+          <div style="font-size:13px;color:#94a3b8;margin-top:4px;">Narx (USD)</div>
+        </div>
+      </div>
+
+      <div class="modal-meta-grid">
+        <div class="mmg-item">
+          <div class="mmg-icon">🛏️</div>
+          <div class="mmg-val">${p.rooms}</div>
+          <div class="mmg-label">Xonalar</div>
+        </div>
+        <div class="mmg-item">
+          <div class="mmg-icon">📐</div>
+          <div class="mmg-val">${p.size} m²</div>
+          <div class="mmg-label">Maydon</div>
+        </div>
+        <div class="mmg-item">
+          <div class="mmg-icon">🗺️</div>
+          <div class="mmg-val">${p.district}</div>
+          <div class="mmg-label">Tuman</div>
+        </div>
+        <div class="mmg-item">
+          <div class="mmg-icon">⭐</div>
+          <div class="mmg-val">${p.rating}</div>
+          <div class="mmg-label">Reyting</div>
+        </div>
+      </div>
+
+      <p class="modal-desc">${p.description} Bu uy ${p.rooms} xonali bo'lib, umumiy maydoni ${p.size} m² ni tashkil qiladi. ${p.district} tumanida joylashgan bo'lib, barcha qulay sharoitlarga ega.</p>
+
+      <div class="modal-features">
+        ${p.features.map(f => `<div class="mf-item">${f}</div>`).join('')}
+      </div>
+
+      <div class="modal-contact">
+        <div>
+          <div class="mc-label">Bog'lanish uchun</div>
+          <div class="mc-phone">${p.phone}</div>
+        </div>
+        <a href="tel:${p.phone}" class="btn-primary" style="font-size:14px;padding:12px 20px;">📞 Qo'ng'iroq</a>
+      </div>
+
+      <div class="modal-actions">
+        <button class="btn-primary" onclick="addToCart(${p.id})" style="flex:1;">
+          ${inCart ? '✓ Savatchada' : '🛒 Savatchaga qo\'shish'}
+        </button>
+        <button class="btn-ghost" onclick="toggleFavorite(${p.id})" style="flex:1;">
+          ${inFav ? '❤️ Tanlanganlarda' : '🤍 Saqlash'}
+        </button>
+      </div>
+    </div>
+  `;
+
+            document.getElementById('modalOverlay').classList.add('open');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal() {
+            document.getElementById('modalOverlay').classList.remove('open');
+            document.body.style.overflow = '';
+        }
+
+        // ── GOOGLE MAPS ──
+        function initGoogleMap() {
+            // Create a simple styled map using Leaflet-like placeholder or OpenStreetMap
+            const mapEl = document.getElementById('map');
+            if (!mapEl) return;
+
+            // Use a beautiful iframe-based map for Tashkent
+            mapEl.innerHTML = `
+    <div style="position:relative;width:100%;height:100%;background:linear-gradient(135deg,#1e3a5f,#2563eb20);border-radius:24px;overflow:hidden;">
+      <div id="mapCanvas" style="width:100%;height:100%;"></div>
+    </div>
+  `;
+
+            loadLeafletMap();
+        }
+
+        function loadLeafletMap() {
+            // Load Leaflet CSS and JS
+            if (!document.querySelector('[data-leaflet]')) {
+                const link = document.createElement('link');
+                link.rel = 'stylesheet';
+                link.href = 'https://unpkg.com/leaflet@1.9.4/dist/leaflet.css';
+                link.setAttribute('data-leaflet', '');
+                document.head.appendChild(link);
+
+                const script = document.createElement('script');
+                script.src = 'https://unpkg.com/leaflet@1.9.4/dist/leaflet.js';
+                script.onload = initLeafletMap;
+                document.head.appendChild(script);
+            } else {
+                initLeafletMap();
+            }
+        }
+
+        function initLeafletMap() {
+            if (typeof L === 'undefined') { setTimeout(initLeafletMap, 200); return; }
+
+            const mapCanvas = document.getElementById('mapCanvas');
+            if (!mapCanvas || googleMap) return;
+
+            googleMap = L.map('mapCanvas', {
+                zoomControl: true,
+                scrollWheelZoom: false,
+            }).setView([TASHKENT_COORDS.lat, TASHKENT_COORDS.lng], 12);
+
+            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                attribution: '© OpenStreetMap contributors',
+                maxZoom: 18,
+            }).addTo(googleMap);
+
+            // Add markers
+            PROPERTIES.forEach(p => {
+                const color = p.price < 80000 ? '#2563EB' : p.price < 200000 ? '#F59E0B' : '#ef4444';
+
+                const icon = L.divIcon({
+                    html: `<div style="
+        background:${color};
+        color:white;
+        padding:4px 8px;
+        border-radius:100px;
+        font-size:11px;
+        font-weight:700;
+        white-space:nowrap;
+        box-shadow:0 4px 12px rgba(0,0,0,.3);
+        border:2px solid white;
+        font-family:DM Sans,sans-serif;
+      ">$${(p.price / 1000).toFixed(0)}k</div>`,
+                    className: '',
+                    iconAnchor: [20, 10],
+                });
+
+                const marker = L.marker([p.latitude, p.longitude], { icon })
+                    .addTo(googleMap)
+                    .bindPopup(`
+        <div style="font-family:DM Sans,sans-serif;min-width:200px;padding:4px;">
+          <img src="${p.image}" style="width:100%;height:120px;object-fit:cover;border-radius:8px;margin-bottom:8px;"/>
+          <div style="font-weight:700;font-size:14px;margin-bottom:4px;">${p.title}</div>
+          <div style="color:#2563EB;font-weight:700;font-size:15px;margin-bottom:4px;">$${p.price.toLocaleString()}</div>
+          <div style="font-size:12px;color:#64748b;">📍 ${p.district} · ${p.rooms} xona · ${p.size}m²</div>
+        </div>
+      `, { maxWidth: 220 });
+
+                mapMarkers.push(marker);
+            });
+        }
+
+        // ── ANIMATIONS ──
+        function initAnimations() {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+            document.querySelectorAll('[data-fade]').forEach(el => observer.observe(el));
+
+            // Observe district cards when rendered
+            const districtObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        districtObserver.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.05 });
+
+            setTimeout(() => {
+                document.querySelectorAll('.district-card').forEach(el => districtObserver.observe(el));
+            }, 100);
+        }
+
+        // ── PARALLAX ──
+        function initParallax() {
+            window.addEventListener('scroll', () => {
+                const scrollY = window.scrollY;
+                document.querySelectorAll('[data-parallax]').forEach(el => {
+                    const speed = parseFloat(el.dataset.parallax) || 0.2;
+                    el.style.transform = `translateY(${scrollY * speed}px)`;
+                });
+            }, { passive: true });
+        }
+
+        // ── STATS COUNTER ──
+        function initStats() {
+            const counters = document.querySelectorAll('.stat-num[data-count]');
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const el = entry.target;
+                        const target = parseInt(el.dataset.count);
+                        animateCounter(el, 0, target, 1800);
+                        observer.unobserve(el);
+                    }
+                });
+            }, { threshold: 0.5 });
+
+            counters.forEach(c => observer.observe(c));
+        }
+
+        function animateCounter(el, start, end, duration) {
+            const startTime = performance.now();
+            const suffix = el.parentElement.querySelector('.stat-label')?.textContent?.includes('%') ? '%' : '+';
+
+            function update(currentTime) {
+                const elapsed = currentTime - startTime;
+                const progress = Math.min(elapsed / duration, 1);
+                const eased = 1 - Math.pow(1 - progress, 3); // ease out cubic
+                const current = Math.floor(start + (end - start) * eased);
+                el.textContent = current.toLocaleString() + (progress >= 1 ? suffix : '');
+                if (progress < 1) requestAnimationFrame(update);
+            }
+
+            requestAnimationFrame(update);
+        }
+
+        // ── TOAST ──
+        function showToast(message, duration = 2500) {
+            const toast = document.getElementById('toast');
+            toast.textContent = message;
+            toast.classList.add('show');
+            setTimeout(() => toast.classList.remove('show'), duration);
+        }
+
+        // ── CONTACT FORM ──
+        window.submitContact = function (e) {
+            e.preventDefault();
+            showToast('✅ Xabaringiz yuborildi! Tez orada bog\'lanamiz.');
+            e.target.reset();
+        };
+
+        // ── KEYBOARD ──
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                closeModal();
+                closeCart();
+                document.getElementById('searchDropdown').classList.remove('open');
+            }
+        });
+
+        // ── SMOOTH SECTION TRANSITIONS ──
+        document.querySelectorAll('a[href^="#"]').forEach(link => {
+            link.addEventListener('click', (e) => {
+                const href = link.getAttribute('href');
+                if (href === '#') return;
+                const target = document.querySelector(href);
+                if (target) {
+                    e.preventDefault();
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+
+        // ── NEWSLETTER ──
+        document.querySelector('.nl-form button')?.addEventListener('click', () => {
+            const input = document.querySelector('.nl-form input');
+            if (input && input.value) {
+                showToast('✅ Obuna bo\'ldingiz! Rahmat.');
+                input.value = '';
+            }
+        });
+
+        // ── PERFORMANCE: Lazy load images on scroll ──
+        const imgObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const img = entry.target;
+                    if (img.dataset.src) {
+                        img.src = img.dataset.src;
+                        img.removeAttribute('data-src');
+                    }
+                    imgObserver.unobserve(img);
+                }
+            });
+        });
+
+        document.querySelectorAll('img[data-src]').forEach(img => imgObserver.observe(img));
+
+        // ── INITIAL RENDER ──
+        console.log(`🏠 LuxEstate — ${PROPERTIES.length} ta premium uy yuklandi`);
+    </script>
+</body>
+
+</html>
